@@ -2,8 +2,8 @@
  * @Description:  to do item
  * @Author: ZY
  * @Date: 2021-01-15 18:50:38
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-04-16 13:36:34
+ * @LastEditors: ZY
+ * @LastEditTime: 2021-01-16 16:09:12
 -->
 <template>
   <li
@@ -58,10 +58,10 @@ export default defineComponent({
   props: {
     todo: {
       type: Object as PropType<TodoItem>,
-      default: () => ({
+      default: {
         text: '',
         done: false
-      })
+      }
     }
 
   },

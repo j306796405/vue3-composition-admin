@@ -2,8 +2,8 @@
  * @Description: app moudle
  * @Author: ZY
  * @Date: 2020-12-23 10:25:37
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-04-16 17:40:18
+ * @LastEditors: ZY
+ * @LastEditTime: 2020-12-23 11:51:40
  */
 import {
   Store as VuexStore,
@@ -21,12 +21,6 @@ import type { AppState } from './state'
 
 export { AppState }
 
-/***
- * Omit去除getters、commit、dispatch，结合自己定义的dispatch、commit方法
- * K extends keyof Mutations，Mutations对应的其中一个key
- * P extends Parameters<Mutations[K]>[1] 获取Mutations[K]函数的第2个参数，即payload
- * ReturnType<Mutations[K]> 获取Mutations[K]的返回值
- */
 export type AppStore<S = AppState> = Omit<VuexStore<S>, 'getters' | 'commit' | 'dispatch'>
 & {
   commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
